@@ -5,7 +5,7 @@ Code, data tooling, and released measurements for the anonymous ICLR submission
 
 The repository covers the main evidence chain:
 
-- construction and validation of MORALTRACE;
+- construction and validation of MoralTrace;
 - behavioral screening and moral-patient completion;
 - causal-source and outcome-valence state replacement;
 - low-rank interfaces and attention/MLP component mediation;
@@ -13,8 +13,8 @@ The repository covers the main evidence chain:
 - released measurements supporting Figures 2–6 and Tables 2–3.
 
 Model weights and third-party evaluation records are excluded. Representative
-MORALTRACE examples are included under `data/samples/`. The complete dataset is
-available from the [MORALTRACE Hugging Face Dataset](https://huggingface.co/datasets/happy-holiday/MoralTrace)
+MoralTrace examples are included under `data/samples/`. The complete dataset is
+available from the [MoralTrace Hugging Face Dataset](https://huggingface.co/datasets/happy-holiday/MoralTrace)
 and tracks the current dataset release.
 
 ## Installation
@@ -43,9 +43,9 @@ python -m unittest discover -s tests -v
 `scripts/reproduce.py` validates the numerical identities in the released
 tables and writes five summary figures to `outputs/paper_figures/`.
 
-## Download MORALTRACE
+## Download MoralTrace
 
-Download MORALTRACE:
+Download MoralTrace:
 
 ```bash
 python scripts/download_data.py \
@@ -120,7 +120,7 @@ intervals and alternative aggregations can be recomputed.
 
 ## Licenses
 
-Source code is released under Apache-2.0. Original MORALTRACE records and
+Source code is released under Apache-2.0. Original MoralTrace records and
 metadata are released under CC BY 4.0. Third-party datasets and model weights
 remain governed by their original terms. See `LICENSE`, `DATA_LICENSE`, and
 `NOTICE`.

@@ -1,6 +1,6 @@
-# MORALTRACE data release
+# MoralTrace data release
 
-MORALTRACE contains 51,177 records in nine configurations. The authoritative
+MoralTrace contains 51,177 records in nine configurations. The authoritative
 counts are stored in `data/manifests/moraltrace.json` and checked by
 `python -m data_validation`.
 
@@ -53,7 +53,7 @@ or causal and moral cue terms appear.
 ## Dataset access
 
 The complete release is available from the
-[MORALTRACE Hugging Face Dataset](https://huggingface.co/datasets/happy-holiday/MoralTrace).
+[MoralTrace Hugging Face Dataset](https://huggingface.co/datasets/happy-holiday/MoralTrace).
 The download command in `README.md` checks every configuration against the
 local manifest before writing the Arrow and JSONL representations.
 
@@ -74,6 +74,6 @@ low-rank-interface, and full-state scores for every pair.
 
 ## License boundary
 
-Original MORALTRACE content is distributed under CC BY 4.0. The data license
+Original MoralTrace content is distributed under CC BY 4.0. The data license
 does not cover third-party records, model outputs whose upstream terms impose
 additional restrictions, or model weights.

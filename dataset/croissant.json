@@ -6,7 +6,7 @@
   },
   "@type": "Dataset",
   "conformsTo": "http://mlcommons.org/croissant/1.0",
-  "name": "MORALTRACE",
+  "name": "MoralTrace",
   "description": "Controlled benchmark for moral-patient completion, causal-source binding, and relation-conditioned moral evaluation in language models.",
   "version": "1.0.0",
   "license": "https://creativecommons.org/licenses/by/4.0/",
@@ -20,7 +20,7 @@
     {
       "@type": "cr:FileObject",
       "@id": "manifest",
-      "name": "MORALTRACE release manifest",
+      "name": "MoralTrace release manifest",
       "description": "Configuration names, counts, and core factorial breakdown.",
       "encodingFormat": "application/json",
       "contentUrl": "moraltrace.json"

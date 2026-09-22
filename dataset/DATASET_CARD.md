@@ -2,7 +2,7 @@
 license: cc-by-4.0
 language:
   - en
-pretty_name: MORALTRACE
+pretty_name: MoralTrace
 size_categories:
   - 10K<n<100K
 task_categories:
@@ -62,9 +62,9 @@ configs:
         path: node_collapse/test-*.parquet
 ---
 
-# MORALTRACE
+# MoralTrace
 
-MORALTRACE is a controlled English-language benchmark for studying how language
+MoralTrace is a controlled English-language benchmark for studying how language
 models construct affected participants, bind outcomes to causal sources, and
 route event information into moral judgments. It accompanies the anonymous
 ICLR submission “Beyond Static Values: Causal Transition from Event Relations
@@ -123,7 +123,7 @@ original `sealed_test` designation where applicable.
 
 ## Intended uses
 
-MORALTRACE supports research on causal reasoning, moral-patient completion,
+MoralTrace supports research on causal reasoning, moral-patient completion,
 relation-conditioned evaluation, representation analysis, state replacement,
 and mechanistic interpretability. It also supports auditing whether a model
 tracks causal sources and affected entities under controlled counterfactuals.
@@ -146,9 +146,9 @@ and are distributed by their original maintainers.
 
 ## Licensing
 
-Original MORALTRACE records and metadata are released under CC BY 4.0.
+Original MoralTrace records and metadata are released under CC BY 4.0.
 Third-party datasets and model weights are excluded from this license and from
-the MORALTRACE distribution.
+the MoralTrace distribution.
 
 ## Citation
 

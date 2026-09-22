@@ -10,7 +10,7 @@ writes Figures 2–6 summaries under `outputs/paper_figures/`.
 
 The metric files contain aggregate model measurements and no model-generated
 scenario text. Record-level outputs are produced by the experiment entry points
-and remain associated with their MORALTRACE `record_id` values. This separation
+and remain associated with their MoralTrace `record_id` values. This separation
 keeps the source archive compact while preserving the join key needed for
 independent aggregation.
 

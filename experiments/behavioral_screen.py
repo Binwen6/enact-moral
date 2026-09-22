@@ -62,7 +62,7 @@ def score_rows(
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Collect behavioral readouts for MORALTRACE records.")
+    parser = argparse.ArgumentParser(description="Collect behavioral readouts for MoralTrace records.")
     parser.add_argument("--data", type=Path, required=True)
     parser.add_argument("--model-id", required=True)
     parser.add_argument("--model-source", choices=("local", "hub"), required=True)

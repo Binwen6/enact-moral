@@ -84,7 +84,7 @@ def validate_graph_sample(path: Path) -> None:
 
 def validate_release_metadata(croissant_path: Path, card_path: Path, manifest: dict[str, Any]) -> None:
     croissant = json.loads(croissant_path.read_text(encoding="utf-8"))
-    if croissant.get("name") != "MORALTRACE" or croissant.get("version") != manifest["version"]:
+    if croissant.get("name") != "MoralTrace" or croissant.get("version") != manifest["version"]:
         raise ValueError("Croissant name or version differs from the release manifest")
     if croissant.get("conformsTo") != "http://mlcommons.org/croissant/1.0":
         raise ValueError("Croissant metadata does not declare version 1.0")
@@ -93,7 +93,7 @@ def validate_release_metadata(croissant_path: Path, card_path: Path, manifest: d
     if missing:
         raise ValueError(f"Dataset card is missing configurations: {missing}")
     if "CC BY 4.0" not in card:
-        raise ValueError("Dataset card is missing the MORALTRACE license declaration")
+        raise ValueError("Dataset card is missing the MoralTrace license declaration")
 
 
 def validate_auxiliary_samples(external_path: Path, node_path: Path) -> None:
@@ -109,7 +109,7 @@ def validate_auxiliary_samples(external_path: Path, node_path: Path) -> None:
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Validate MORALTRACE manifests and representative samples.")
+    parser = argparse.ArgumentParser(description="Validate MoralTrace manifests and representative samples.")
     parser.add_argument("--manifest", type=Path, default=PROJECT_ROOT / "data/manifests/moraltrace.json")
     parser.add_argument("--samples", type=Path, default=PROJECT_ROOT / "data/samples/samples.jsonl")
     parser.add_argument(

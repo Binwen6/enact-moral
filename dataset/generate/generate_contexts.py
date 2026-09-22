@@ -75,7 +75,7 @@ def validate_contexts(graph: dict[str, Any], generated: dict[str, Any]) -> list[
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Generate surface contexts for frozen MORALTRACE graphs.")
+    parser = argparse.ArgumentParser(description="Generate surface contexts for frozen MoralTrace graphs.")
     parser.add_argument("--graphs", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)
     arguments = parser.parse_args()
@@ -112,4 +112,3 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-
