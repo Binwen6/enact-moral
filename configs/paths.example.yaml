@@ -1,4 +1,4 @@
-dataset_id: null
+dataset_id: happy-holiday/MoralTrace
 dataset_revision: null
 model_source: local
 model_root: /path/to/open-weight-models

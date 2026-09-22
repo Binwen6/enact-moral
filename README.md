@@ -14,7 +14,8 @@ The repository covers the main evidence chain:
 
 Model weights and third-party evaluation records are excluded. Representative
 MORALTRACE examples are included under `data/samples/`. The complete dataset is
-distributed separately as a versioned Hugging Face Dataset.
+available from the [MORALTRACE Hugging Face Dataset](https://huggingface.co/datasets/happy-holiday/MoralTrace)
+and tracks the current dataset release.
 
 ## Installation
 
@@ -44,13 +45,11 @@ tables and writes five summary figures to `outputs/paper_figures/`.
 
 ## Download MORALTRACE
 
-Use the anonymous dataset identifier and immutable revision supplied on the
-submission page:
+Download MORALTRACE:
 
 ```bash
 python scripts/download_data.py \
-  --dataset-id <dataset-id> \
-  --revision <immutable-revision> \
+  --dataset-id happy-holiday/MoralTrace \
   --output data/full/moraltrace
 ```
 

@@ -15,9 +15,9 @@ from data_validation import load_manifest, validate_manifest  # noqa: E402
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Download a pinned MORALTRACE release from Hugging Face.")
+    parser = argparse.ArgumentParser(description="Download MORALTRACE from Hugging Face.")
     parser.add_argument("--dataset-id", required=True)
-    parser.add_argument("--revision", required=True)
+    parser.add_argument("--revision")
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--config", action="append", dest="configs")
     arguments = parser.parse_args()

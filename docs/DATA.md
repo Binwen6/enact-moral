@@ -50,20 +50,12 @@ when graph identifiers change, settings are missing, length constraints fail,
 or causal and moral cue terms appear.
 `.env.example` documents the required variable names and contains no values.
 
-`dataset/publish_hf.py` publishes previously validated `DatasetDict` objects.
-It verifies every count against the manifest before upload and requires an
-explicit repository identifier and revision. The same command uploads
-`dataset/DATASET_CARD.md`, `dataset/croissant.json`, and the release manifest.
+## Dataset access
 
-```bash
-python dataset/publish_hf.py \
-  --data-root data/full/moraltrace \
-  --manifest data/manifests/moraltrace.json \
-  --repo-id <dataset-id> \
-  --revision <release-revision> \
-  --dataset-card dataset/DATASET_CARD.md \
-  --croissant dataset/croissant.json
-```
+The complete release is available from the
+[MORALTRACE Hugging Face Dataset](https://huggingface.co/datasets/happy-holiday/MoralTrace).
+The download command in `README.md` checks every configuration against the
+local manifest before writing the Arrow and JSONL representations.
 
 ## External evaluation data
 
