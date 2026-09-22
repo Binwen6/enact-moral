@@ -1,0 +1,8 @@
+dataset,readout,n_min,n_max,effect_concordance,interface_gain,valence_control,shuffled_control,random_control,causal_source_gain
+MoCa,wrongness,62,62,0.98,1.33,0.23,0.41,0.04,1.15
+AITA,intention,400,400,0.97,1.33,0.21,0.17,0.04,1.11
+AITA,wrongness,400,400,0.98,1.44,0.17,0.19,0.04,0.91
+Scruples,intention,393,396,0.98,1.53,0.25,0.21,0.03,0.84
+Scruples,wrongness,394,396,0.99,1.41,0.17,0.21,0.03,0.70
+UniMoral,intention,800,800,0.99,1.63,0.18,0.27,0.04,0.94
+UniMoral,wrongness,800,800,0.99,1.40,0.17,0.25,0.04,0.70

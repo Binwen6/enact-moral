@@ -1,0 +1,137 @@
+models:
+  qwen2_5_0_5b_instruct:
+    hub_id: Qwen/Qwen2.5-0.5B-Instruct
+    local_name: Qwen2.5-0.5B-Instruct
+    family: Qwen2.5
+    parameters_billion: 0.5
+    dtype: bfloat16
+    use_chat_template: true
+    disable_thinking: false
+  qwen2_5_1_5b_instruct:
+    hub_id: Qwen/Qwen2.5-1.5B-Instruct
+    local_name: Qwen2.5-1.5B-Instruct
+    family: Qwen2.5
+    parameters_billion: 1.5
+    dtype: bfloat16
+    use_chat_template: true
+    disable_thinking: false
+  qwen2_5_3b_instruct:
+    hub_id: Qwen/Qwen2.5-3B-Instruct
+    local_name: Qwen2.5-3B-Instruct
+    family: Qwen2.5
+    parameters_billion: 3.1
+    dtype: bfloat16
+    use_chat_template: true
+    disable_thinking: false
+  qwen2_5_7b_instruct:
+    hub_id: Qwen/Qwen2.5-7B-Instruct
+    local_name: Qwen2.5-7B-Instruct
+    family: Qwen2.5
+    parameters_billion: 7.6
+    dtype: bfloat16
+    use_chat_template: true
+    disable_thinking: false
+  qwen2_5_14b_instruct:
+    hub_id: Qwen/Qwen2.5-14B-Instruct
+    local_name: Qwen2.5-14B-Instruct
+    family: Qwen2.5
+    parameters_billion: 14.8
+    dtype: bfloat16
+    use_chat_template: true
+    disable_thinking: false
+  qwen2_5_32b_instruct:
+    hub_id: Qwen/Qwen2.5-32B-Instruct
+    local_name: Qwen2.5-32B-Instruct
+    family: Qwen2.5
+    parameters_billion: 32.8
+    dtype: bfloat16
+    use_chat_template: true
+    disable_thinking: false
+  qwen2_5_72b_instruct:
+    hub_id: Qwen/Qwen2.5-72B-Instruct
+    local_name: Qwen2.5-72B-Instruct
+    family: Qwen2.5
+    parameters_billion: 72.7
+    dtype: bfloat16
+    use_chat_template: true
+    disable_thinking: false
+  gemma_2_9b_it:
+    hub_id: google/gemma-2-9b-it
+    local_name: gemma-2-9b-it
+    family: Gemma-2
+    parameters_billion: 9.2
+    dtype: bfloat16
+    use_chat_template: true
+    disable_thinking: false
+  gemma_2_27b_it:
+    hub_id: google/gemma-2-27b-it
+    local_name: gemma-2-27b-it
+    family: Gemma-2
+    parameters_billion: 27.2
+    dtype: bfloat16
+    use_chat_template: true
+    disable_thinking: false
+  llama_3_1_8b_instruct:
+    hub_id: meta-llama/Llama-3.1-8B-Instruct
+    local_name: Llama-3.1-8B-Instruct
+    family: Llama-3.1
+    parameters_billion: 8.0
+    dtype: bfloat16
+    use_chat_template: true
+    disable_thinking: false
+  llama_3_1_70b_instruct:
+    hub_id: meta-llama/Llama-3.1-70B-Instruct
+    local_name: Llama-3.1-70B-Instruct
+    family: Llama-3.1
+    parameters_billion: 70.6
+    dtype: bfloat16
+    use_chat_template: true
+    disable_thinking: false
+  mistral_7b_instruct_v0_3:
+    hub_id: mistralai/Mistral-7B-Instruct-v0.3
+    local_name: Mistral-7B-Instruct-v0.3
+    family: Mistral
+    parameters_billion: 7.3
+    dtype: bfloat16
+    use_chat_template: true
+    disable_thinking: false
+  mixtral_8x7b_instruct:
+    hub_id: mistralai/Mixtral-8x7B-Instruct-v0.1
+    local_name: Mixtral-8x7B-Instruct-v0.1
+    family: Mixtral
+    parameters_billion: 46.7
+    dtype: bfloat16
+    use_chat_template: true
+    disable_thinking: false
+  olmo_3_7b_base:
+    hub_id: allenai/Olmo-3-1025-7B
+    local_name: Olmo-3-1025-7B
+    family: OLMo-3
+    parameters_billion: 7.0
+    dtype: bfloat16
+    use_chat_template: false
+    disable_thinking: false
+  olmo_3_7b_sft:
+    hub_id: allenai/Olmo-3-7B-Instruct-SFT
+    local_name: Olmo-3-7B-Instruct-SFT
+    family: OLMo-3
+    parameters_billion: 7.0
+    dtype: bfloat16
+    use_chat_template: false
+    disable_thinking: false
+  olmo_3_7b_dpo:
+    hub_id: allenai/Olmo-3-7B-Instruct-DPO
+    local_name: Olmo-3-7B-Instruct-DPO
+    family: OLMo-3
+    parameters_billion: 7.0
+    dtype: bfloat16
+    use_chat_template: false
+    disable_thinking: false
+  olmo_3_7b_instruct:
+    hub_id: allenai/Olmo-3-7B-Instruct
+    local_name: Olmo-3-7B-Instruct
+    family: OLMo-3
+    parameters_billion: 7.0
+    dtype: bfloat16
+    use_chat_template: true
+    disable_thinking: false

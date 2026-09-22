@@ -1,0 +1,71 @@
+global:
+  dtype: bfloat16
+  binary_readout: "logit(Yes) - logit(No)"
+  rating_labels: [1, 2, 3, 4, 5, 6, 7]
+
+patient_completion:
+  seed: 42
+  layers:
+    qwen2_5_7b_instruct: 14
+    qwen2_5_14b_instruct: 24
+    qwen2_5_32b_instruct: 24
+    gemma_2_9b_it: 21
+    gemma_2_27b_it: 27
+    llama_3_1_8b_instruct: 14
+    mistral_7b_instruct_v0_3: 12
+    mixtral_8x7b_instruct: 13
+
+mediator_knockout:
+  seed: 0
+  random_placements: 5
+
+relational_binding:
+  state_positions:
+    causal_source: causal_statement_end
+    outcome_valence: outcome_end
+  layers:
+    qwen2_5_7b_instruct: 11
+    qwen2_5_72b_instruct: 32
+    gemma_2_9b_it: 17
+    gemma_2_27b_it: 18
+
+compact_interface:
+  rank: 1
+  position: final_prompt_token
+  layers:
+    qwen2_5_7b_instruct: 28
+    qwen2_5_72b_instruct: 61
+    gemma_2_9b_it: 37
+    gemma_2_27b_it: 30
+    llama_3_1_8b_instruct: 25
+    llama_3_1_70b_instruct: 64
+    olmo_3_7b_instruct: 32
+
+component_mediation:
+  selection_seed: 20260819
+  feature_mediation_top4:
+    gemma_2_9b_it:
+      normative_social:
+        selected: [L29.mlp, L26.h8, L28.mlp, L27.mlp]
+        controls: [L20.mlp, L18.mlp, L21.mlp, L19.mlp]
+    qwen2_5_7b_instruct:
+      normative_social:
+        selected: [L23.mlp, L22.mlp, L21.mlp, L21.h2]
+        controls: [L18.mlp, L15.mlp, L16.mlp, L17.mlp]
+  faithful_circuit_component_count:
+    qwen2_5_7b_instruct:
+      mechanistic_computational: 4
+      instrumental_social: 4
+      normative_social: 16
+    qwen2_5_72b_instruct:
+      mechanistic_computational: 32
+      instrumental_social: 32
+      normative_social: 32
+    gemma_2_9b_it:
+      mechanistic_computational: 64
+      instrumental_social: 64
+      normative_social: 64
+    gemma_2_27b_it:
+      mechanistic_computational: 64
+      instrumental_social: 128
+      normative_social: 32

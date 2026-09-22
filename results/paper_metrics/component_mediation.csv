@@ -1,0 +1,16 @@
+model,domain,k,validation_signal,validation_necessity,validation_control,sealed_signal,sealed_necessity,sealed_control
+Gemma-2-9B-it,mechanistic,64,0.931,0.946,0.087,0.939,0.943,0.049
+Gemma-2-9B-it,instrumental,64,0.958,0.955,0.021,0.948,0.947,0.024
+Gemma-2-9B-it,normative,64,0.959,0.954,0.035,0.950,0.952,0.041
+Gemma-2-27B-it,mechanistic,64,0.903,0.907,-0.025,0.913,0.905,-0.011
+Gemma-2-27B-it,instrumental,128,0.968,0.961,-0.001,0.952,0.949,0.003
+Gemma-2-27B-it,normative,32,0.900,0.897,-0.124,0.889,0.891,-0.107
+Qwen2.5-7B-Instruct,mechanistic,4,0.909,0.872,-0.030,,,
+Qwen2.5-7B-Instruct,instrumental,4,0.885,0.864,-0.040,,,
+Qwen2.5-7B-Instruct,normative,16,0.930,0.926,-0.080,,,
+Qwen2.5-72B-Instruct,mechanistic,32,0.919,0.918,-0.008,0.918,0.922,-0.011
+Qwen2.5-72B-Instruct,instrumental,32,0.931,0.931,0.013,0.926,0.924,0.012
+Qwen2.5-72B-Instruct,normative,32,0.931,0.922,0.015,0.925,0.926,0.015
+Llama-3.1-70B-Instruct,normative,128,0.908,0.901,0.089,,,
+Llama-3.1-8B-Instruct,normative,128,0.544,0.535,0.051,,,
+OLMo-3-7B-Instruct,normative,32,0.935,0.908,0.003,,,

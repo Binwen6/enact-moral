@@ -1,0 +1,11 @@
+ENACT-Moral
+Copyright 2026 ENACT-Moral Authors
+
+Source code is distributed under Apache-2.0. Original MORALTRACE data is
+distributed separately under CC BY 4.0.
+
+External evaluations use Moral Stories, MoCa, Scruples, UniMoral, and AITA
+research corpora under their respective access terms and licenses. Those source
+records are not redistributed in this repository. Model weights are not
+redistributed.
+

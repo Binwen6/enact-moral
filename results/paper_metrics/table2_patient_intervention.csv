@@ -1,0 +1,9 @@
+model,remove_1d,remove_2d,random_2d,add_1d,add_2d
+Llama-3.1-8B-Instruct,0.00,-0.28,0.02,0.82,2.13
+Mistral-7B-Instruct-v0.3,-0.05,-0.37,0.04,1.06,1.71
+Mixtral-8x7B-Instruct-v0.1,-0.48,-1.93,0.07,0.10,0.60
+Qwen2.5-7B-Instruct,-0.30,-1.46,0.03,0.67,2.55
+Qwen2.5-14B-Instruct,-2.22,-4.34,-0.01,0.77,1.86
+Qwen2.5-32B-Instruct,-0.02,-0.59,0.03,0.26,1.15
+Gemma-2-9B-it,-0.37,-1.09,0.00,0.67,1.60
+Gemma-2-27B-it,-0.09,-0.12,-0.02,0.16,1.00

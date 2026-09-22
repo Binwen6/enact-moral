@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools==82.0.1"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "enact-moral"
+version = "0.1.0"
+description = "Causal tracing of event-navigated moral reasoning in language models"
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
+license = {file = "LICENSE"}
+dependencies = [
+  "accelerate==1.14.0",
+  "datasets==5.0.0",
+  "huggingface-hub==1.22.0",
+  "matplotlib==3.11.0",
+  "numpy==2.4.4",
+  "pandas==3.0.3",
+  "PyYAML==6.0.3",
+  "requests==2.34.2",
+  "scikit-learn==1.9.0",
+  "scipy==1.18.0",
+  "torch==2.11.0",
+  "transformers==5.13.0",
+]
+
+[project.scripts]
+enact-check-anonymity = "anonymity:main"
+enact-reproduce = "paper_analysis:main"
+enact-validate-data = "data_validation:main"
+
+[project.optional-dependencies]
+circuit = [
+  "nnsight==0.7.0",
+  "sae-lens==6.45.3",
+  "transformer-lens==3.5.1",
+]
+
+[tool.setuptools]
+py-modules = ["anonymity", "config", "data_validation", "interventions", "io_utils", "modeling", "paper_analysis", "readouts", "version"]
+package-dir = {"" = "src"}

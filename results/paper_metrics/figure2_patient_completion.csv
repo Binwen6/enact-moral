@@ -1,0 +1,12 @@
+panel,condition,median,q25,q75,metric
+accuracy,named_owner,1.000000,1.000000,1.000000,identification_accuracy
+accuracy,distant_person,0.950000,0.925000,1.000000,identification_accuracy
+accuracy,self,1.000000,0.975000,1.000000,identification_accuracy
+accuracy,group_symbol,0.950000,0.800000,1.000000,identification_accuracy
+accuracy,no_fixed_patient,0.750000,0.625000,0.875000,identification_accuracy
+geometry,scene_only,0.262823,0.206176,0.323133,relative_magnitude
+geometry,scene_only,0.362578,0.326260,0.421141,direction_cosine
+geometry,patient_query,0.346151,0.283993,0.429934,relative_magnitude
+geometry,patient_query,0.511128,0.417464,0.590741,direction_cosine
+geometry,judgment_query,0.479095,0.356591,0.695010,relative_magnitude
+geometry,judgment_query,0.609498,0.417692,0.798232,direction_cosine

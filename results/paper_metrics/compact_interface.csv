@@ -1,0 +1,15 @@
+model,domain,layer,rank,rank_effect,full_effect,behavior_effect,recovery_ratio,wrong_position,shuffled_direction,necessity_effect
+Gemma-2-9B-it,mechanistic,37,1,0.714,0.664,0.725,0.98,-0.040,0.086,0.703
+Gemma-2-9B-it,instrumental,37,1,0.824,0.748,0.808,1.02,-0.042,0.100,0.795
+Gemma-2-9B-it,normative,37,1,0.828,0.760,0.835,0.99,-0.023,0.119,0.821
+Gemma-2-27B-it,mechanistic,30,1,0.751,0.637,0.762,0.99,-0.023,0.185,0.748
+Gemma-2-27B-it,instrumental,30,1,0.866,0.728,0.877,0.99,0.003,0.249,0.859
+Qwen2.5-7B-Instruct,mechanistic,28,1,0.925,0.935,0.935,0.99,-0.053,0.369,0.914
+Qwen2.5-7B-Instruct,instrumental,28,1,1.081,1.074,1.074,1.01,-0.022,0.337,1.088
+Qwen2.5-7B-Instruct,normative,28,1,1.131,1.134,1.134,1.00,-0.033,0.348,1.141
+Qwen2.5-72B-Instruct,mechanistic,61,1,1.467,1.262,1.586,0.93,0.022,0.060,1.466
+Qwen2.5-72B-Instruct,instrumental,61,1,1.243,1.071,1.301,0.96,-0.029,0.209,1.252
+Qwen2.5-72B-Instruct,normative,61,1,1.359,1.188,1.445,0.94,0.057,0.189,1.366
+Llama-3.1-70B-Instruct,normative,64,1,0.499,0.411,0.482,1.04,0.000,0.071,0.499
+Llama-3.1-8B-Instruct,normative,25,1,0.152,0.137,0.148,1.02,0.009,0.029,0.145
+OLMo-3-7B-Instruct,normative,32,1,0.175,0.174,0.174,1.01,-0.011,0.085,0.173

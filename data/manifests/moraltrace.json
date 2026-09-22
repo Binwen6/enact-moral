@@ -1,0 +1,23 @@
+{
+  "dataset_name": "MORALTRACE",
+  "version": "1.0.0",
+  "license": "CC-BY-4.0",
+  "total_records": 51177,
+  "configs": {
+    "single_chain_core": 9900,
+    "converging_core": 9900,
+    "relation_reassignment": 28800,
+    "variable_isolation": 423,
+    "participant_completion": 589,
+    "operator_alignment": 395,
+    "outcome_valence": 389,
+    "patient_mind_gradient": 430,
+    "node_collapse": 351
+  },
+  "core_breakdown": {
+    "single_chain_core": {"factorial": 9600, "controls": 300},
+    "converging_core": {"factorial": 9600, "controls": 300},
+    "participant_completion": {"factorial": 400, "extensions": 189}
+  }
+}
+

@@ -1,0 +1,9 @@
+model,stage,layer,total_layers,effect,control
+Gemma-2-9B-it,criterion_state,19,42,1.61,0.052
+Gemma-2-9B-it,decision_state,25,42,2.06,0.070
+Gemma-2-27B-it,criterion_state,18,46,1.61,0.078
+Gemma-2-27B-it,decision_state,21,46,0.42,0.050
+Qwen2.5-14B-Instruct,criterion_state,26,48,1.38,0.047
+Qwen2.5-14B-Instruct,decision_state,29,48,0.40,0.050
+Qwen2.5-32B-Instruct,criterion_state,38,64,0.51,0.026
+Qwen2.5-32B-Instruct,decision_state,45,64,0.96,0.020
