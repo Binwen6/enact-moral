@@ -96,6 +96,61 @@ The participant-completion configuration expands each four-cell factorial
 quartet into its A/B/C/D unit rows and retains the original quartet inside the
 serialized instance.
 
+## Label mapping
+
+The data files keep the labels used while the dataset was built. The paper uses
+the terms in the right-hand columns. Labels are written as stored in
+`record_json`. Task family names, `causal_clause_order` values (`source_first`,
+`other_first`), and `outcome_valence` values (`harmful`, `beneficial`) are
+identical in the data files and the paper.
+
+Field names:
+
+| Label in data files | Term in the paper |
+|---|---|
+| `actor`, `agent_name` | moral agent |
+| `queried_actor` (`a`, `b`) | queried moral agent |
+| `affected_entity`, `patient_name`, `victim_name`, `n_victims`, `victim_probe_prompt`, `victim_*` cells | moral patient |
+| `semantic_setting`, `setting_id` | domain |
+| `manipulations.affected_role_realization` | explicit or implicit moral patient |
+| `manipulations.causal_connection` | causal source: agent-caused or background-caused |
+| `source_assignment` | causal-source binding: which of the two actions produced the harm |
+| `target_assignment` | moral-patient assignment: which of the two entities bears the harm |
+| `clause_order` | clause order: the clause naming the cause of the harm or of the benefit comes first |
+| `factors.harm_magnitude` | outcome severity |
+| `factors.intent` | agent intentionality |
+| `record_id`, `source_record_id`, `record_type`, `record_json` | instance identifier, source instance identifier, instance type, serialized instance |
+| `quartet_id` | four-condition unit built on one base scenario |
+
+Field values:
+
+| Field | Label in data files | Term in the paper |
+|---|---|---|
+| `semantic_setting`, `setting_id` | `mechanistic_computational`, `instrumental_social`, `normative_social` | mechanistic-computational, instrumental-social, and normative-social domains |
+| `manipulations.affected_role_realization` | `explicit_affected_role` | explicit moral patient |
+| | `latent_affected_role` | implicit moral patient |
+| `manipulations.causal_connection` | `intermediate_event_source` | agent-caused outcome |
+| | `background_event_source` | background-caused outcome |
+| `graph_topology` | `single_causal_chain` | single-chain topology |
+| | `converging_causes` | converging-cause topology |
+| `query_id` | `affected_entity` | moral-patient identification (factual query) |
+| | `causal_source` | causal-source identification (factual query) |
+| | `inferred_intention` | inferred intention (evaluative query) |
+| | `appraisal` | wrongness rating (evaluative query) |
+| | `binary_judgment` | binary judgment (evaluative query) |
+| `query_kind` | `factual`, `model_judgment` | factual query, evaluative query |
+| `mechanism_trace_prompts` | `passive_scene` (`after_scene`) | passive readout at the scenario boundary |
+| | `decision_framed` (`before_answer_generation`) | decision-framed readout before answer generation |
+| `record_type` | `core_factorial` | core factorial instance |
+| | `construct_control` | construction control, excluded from main-effect estimates (`analysis_role`) |
+| `surface_generation_mode` | `deepseek` | model-generated surface text |
+| | `controlled_fallback_after_three_rejections` | deterministic fallback after three rejected attempts |
+| `source_split` | `sealed_test` | sealed split, stored as `split` = `test` |
+| `unit` in `participant_completion` | `A`, `B`, `C`, `D` | explicit moral patient; moral patient inferred from ownership; ordinary-object control; ownership without harm |
+| `level` in `participant_completion` | `B1` to `B5` | named ownership, off-scene individual, symbolic group, self-directed, victimless |
+| `cells` in `patient_mind_gradient` | `object`, `machine`, `animal`, `infant`, `adult`, `self` | inanimate object, autonomous machine, non-human animal, infant, human adult, the self |
+| `cells` in `outcome_valence` | `harm`, `help` | harmful valence, beneficial valence |
+
 ## Construction process
 
 Formal event graphs and factor cells were frozen before surface realization.

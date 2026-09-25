@@ -6,8 +6,8 @@ counts are stored in `data/manifests/moraltrace.json` and checked by
 
 ## Configurations
 
-- `single_chain_core`: 9,600 factorial instances and 300 construct controls;
-- `converging_core`: 9,600 factorial instances and 300 construct controls;
+- `single_chain_core`: 9,600 factorial instances and 300 construction controls;
+- `converging_core`: 9,600 factorial instances and 300 construction controls;
 - `relation_reassignment`: 28,800 two-agent routing instances;
 - `variable_isolation`: 423 variable-specific controls;
 - `participant_completion`: 400 factorial instances and 189 extensions;
