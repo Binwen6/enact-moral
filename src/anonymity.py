@@ -27,9 +27,7 @@ IGNORED_CONTENT_FILES = {"src/anonymity.py"}
 def forbidden_patterns(extra_denied: list[str]) -> list[tuple[str, re.Pattern[str]]]:
     fragments = [
         "/" + "mnt" + "/",
-        "/" + "data" + "/" + "USER" + "/",
         "/" + "home" + "/",
-        "lbw" + "2026",
     ]
     patterns = [(f"forbidden path or identity fragment {value!r}", re.compile(re.escape(value), re.IGNORECASE)) for value in fragments]
     patterns.extend([

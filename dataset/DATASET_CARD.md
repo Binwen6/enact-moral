@@ -67,8 +67,8 @@ configs:
 MoralTrace is a controlled English-language benchmark for studying how language
 models construct affected participants, bind outcomes to causal sources, and
 route event information into moral judgments. It accompanies the anonymous
-ICLR submission “Beyond Static Values: Causal Transition from Event Relations
-to Moral Judgment in LLMs.”
+ICLR submission “Tracing the Causal Transition from Event Relations to Moral
+Judgment in Language Models.”
 
 ## Dataset composition
 

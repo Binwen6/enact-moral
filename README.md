@@ -1,7 +1,7 @@
 # ENACT-Moral
 
 Code, data tooling, and released measurements for the anonymous ICLR submission
-“Beyond Static Values: Causal Transition from Event Relations to Moral Judgment in LLMs.”
+“Tracing the Causal Transition from Event Relations to Moral Judgment in Language Models.”
 
 The repository covers the main evidence chain:
 
