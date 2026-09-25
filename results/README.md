@@ -9,9 +9,9 @@ readout according to the corresponding table.
 writes Figures 2–6 summaries under `outputs/paper_figures/`.
 
 The metric files contain aggregate model measurements and no model-generated
-scenario text. Record-level outputs are produced by the experiment entry points
+scenario text. Instance-level outputs are produced by the experiment entry points
 and remain associated with their MoralTrace `record_id` values. This separation
-keeps the source archive compact while preserving the join key needed for
+keeps the source archive small while preserving the join key needed for
 independent aggregation.
 
 External validation rows report `n_min` and `n_max` because the number of valid

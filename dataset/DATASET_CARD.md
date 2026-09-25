@@ -72,19 +72,19 @@ Judgment in Language Models.”
 
 ## Dataset composition
 
-The release contains 51,177 records in nine configurations:
+The release contains 51,177 instances in nine configurations:
 
-- `single_chain_core`: 9,900 records;
-- `converging_core`: 9,900 records;
-- `relation_reassignment`: 28,800 records;
-- `variable_isolation`: 423 records;
-- `participant_completion`: 589 records;
-- `operator_alignment`: 395 records;
-- `outcome_valence`: 389 records;
-- `patient_mind_gradient`: 430 records;
-- `node_collapse`: 351 records.
+- `single_chain_core`: 9,900 instances;
+- `converging_core`: 9,900 instances;
+- `relation_reassignment`: 28,800 instances;
+- `variable_isolation`: 423 instances;
+- `participant_completion`: 589 instances;
+- `operator_alignment`: 395 instances;
+- `outcome_valence`: 389 instances;
+- `patient_mind_gradient`: 430 instances;
+- `node_collapse`: 351 instances.
 
-Core records retain the formal graph identifier, task family, semantic setting,
+Core instances retain the formal graph identifier, task family, semantic setting,
 factor manipulations, causal bindings, ordered text segments, behavioral
 queries, mechanism-trace prompts, split metadata, and provenance fields.
 
@@ -94,7 +94,7 @@ Each Hugging Face row has a stable `record_id`, the source-side identifier in
 object without schema loss. It can be decoded with `json.loads(row["record_json"])`.
 The participant-completion configuration expands each four-cell factorial
 quartet into its A/B/C/D unit rows and retains the original quartet inside the
-serialized record.
+serialized instance.
 
 ## Construction process
 
@@ -112,12 +112,12 @@ the scenarios are fictional placeholders.
 
 Graph templates determine train, validation, and sealed-test membership. Every
 surface variant of one graph remains in the same split. Train graphs support
-interface fitting, validation graphs support layer and rank selection, and the
+subspace fitting, validation graphs support layer and rank selection, and the
 sealed test supports one frozen evaluation.
 
 The two causal-core configurations and relation-reassignment configuration
 provide `train`, `validation`, and `test` splits. The six focused control
-configurations are released as a `test` split because their records form
+configurations are released as a `test` split because their instances form
 complete evaluation units rather than fitting data. `source_split` retains the
 original `sealed_test` designation where applicable.
 
@@ -125,7 +125,7 @@ original `sealed_test` designation where applicable.
 
 MoralTrace supports research on causal reasoning, moral-patient completion,
 relation-conditioned evaluation, representation analysis, state replacement,
-and mechanistic interpretability. It also supports auditing whether a model
+and mechanistic interpretability. It also supports diagnosing whether a model
 tracks causal sources and affected entities under controlled counterfactuals.
 
 ## Out-of-scope uses
@@ -146,7 +146,7 @@ and are distributed by their original maintainers.
 
 ## Licensing
 
-Original MoralTrace records and metadata are released under CC BY 4.0.
+Original MoralTrace instances and metadata are released under CC BY 4.0.
 Third-party datasets and model weights are excluded from this license and from
 the MoralTrace distribution.
 

@@ -190,8 +190,8 @@ def figure5(metrics_dir: Path, output_dir: Path) -> None:
     axes[0].set_xlim(limits)
     axes[0].set_ylim(limits)
     axes[0].set_xlabel("Behavioral joint effect")
-    axes[0].set_ylabel("One-dimensional interface effect")
-    axes[0].set_title("Compact causal interface")
+    axes[0].set_ylabel("One-dimensional subspace effect")
+    axes[0].set_title("Low-dimensional causal subspace")
     grouped = components.groupby("model")[["validation_signal", "validation_necessity", "validation_control"]].median()
     x_values = np.arange(len(grouped))
     width = 0.25

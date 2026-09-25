@@ -19,7 +19,7 @@ def read_jsonl(path: Path) -> list[dict[str, Any]]:
                 raise TypeError(f"{path}:{line_number} is not a JSON object")
             rows.append(value)
     if not rows:
-        raise ValueError(f"No records in {path}")
+        raise ValueError(f"No instances in {path}")
     return rows
 
 

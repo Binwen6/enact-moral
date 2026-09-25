@@ -36,7 +36,7 @@ def readout_scores(logits: torch.Tensor, tokenizer: Any, readout: str) -> torch.
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Evaluate a frozen ENACT interface on paired external prompts.")
+    parser = argparse.ArgumentParser(description="Evaluate a frozen ENACT subspace on paired external prompts.")
     parser.add_argument("--data", type=Path, required=True)
     parser.add_argument("--basis", type=Path, required=True)
     parser.add_argument("--model-id", required=True)
@@ -55,10 +55,10 @@ def main() -> int:
         raise KeyError(f"Unknown model: {arguments.model_id}")
     records = read_jsonl(arguments.data)
     if not records:
-        raise ValueError("No external evaluation records")
+        raise ValueError("No external evaluation instances")
     basis_array = np.load(arguments.basis, allow_pickle=False)
     if basis_array.ndim != 2:
-        raise ValueError("Interface basis must have shape [hidden, rank]")
+        raise ValueError("Subspace basis must have shape [hidden, rank]")
     basis = orthonormal_basis(torch.from_numpy(basis_array))
     model, tokenizer, metadata = load_model(
         specs[arguments.model_id], arguments.model_source, arguments.model_root,

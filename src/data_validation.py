@@ -26,7 +26,7 @@ def validate_manifest(manifest: dict[str, Any]) -> None:
     declared = int(manifest["total_records"])
     counted = sum(int(count) for count in configs.values())
     if declared != 51_177 or counted != declared:
-        raise ValueError(f"Expected 51,177 records, found manifest total {declared} and sum {counted}")
+        raise ValueError(f"Expected 51,177 instances, found manifest total {declared} and sum {counted}")
     if len(configs) != 9:
         raise ValueError(f"Expected nine dataset configs, found {len(configs)}")
 

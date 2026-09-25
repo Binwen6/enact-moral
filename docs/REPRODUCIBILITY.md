@@ -29,7 +29,7 @@ declared in `configs/models.yaml`.
 
 Every main intervention uses a one-indexed layer number. The relational-binding
 entry point reads causal-source states at the causal-statement endpoint and
-outcome-valence states at the outcome endpoint. The compact interface uses the
+outcome-valence states at the outcome endpoint. The low-rank subspace uses the
 final prompt token, trains on train graphs, and evaluates on validation graphs.
 The frozen values used by the manuscript are listed in
 `configs/paper_experiments.yaml`.
@@ -41,14 +41,14 @@ The frozen values used by the manuscript are listed in
 3. `relational_binding.py` compares source-only, valence-only, additive, and joint replacement.
 4. `mediator_knockout.py` removes downstream attention to an intermediate event and equal-length random spans.
 5. `compact_interface.py` fits the frozen low-rank state and can export its basis as NumPy data.
-6. `component_mediation.py` tests selected attention heads and MLP writers.
+6. `component_mediation.py` tests selected attention heads and MLP blocks.
 7. `external_validation.py` applies the frozen basis to paired prompts from licensed external datasets.
 
 ## Numerical release
 
 `results/paper_metrics/` stores manuscript-level measurements with the displayed
 precision. `outputs/` is ignored by version control and receives generated
-figures and experiment records. Record-level dataset traces permit bootstrap
+figures and experiment outputs. Instance-level dataset traces permit bootstrap
 confidence intervals and alternative aggregations without changing the frozen
 summary files.
 

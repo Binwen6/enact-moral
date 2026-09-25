@@ -15,7 +15,7 @@ from relational_binding import donor_indices, intention_prompt, select_complete_
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Fit and evaluate a low-rank ENACT interface on disjoint graphs.")
+    parser = argparse.ArgumentParser(description="Fit and evaluate a low-rank ENACT subspace on disjoint graphs.")
     parser.add_argument("--data", type=Path, required=True)
     parser.add_argument("--model-id", required=True)
     parser.add_argument("--model-source", choices=("local", "hub"), required=True)

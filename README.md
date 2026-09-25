@@ -8,11 +8,11 @@ The repository covers the main evidence chain:
 - construction and validation of MoralTrace;
 - behavioral screening and moral-patient completion;
 - causal-source and outcome-valence state replacement;
-- low-rank interfaces and attention/MLP component mediation;
+- low-rank subspaces and attention/MLP component mediation;
 - paired-prompt transfer to licensed external evaluation sets;
 - released measurements supporting Figures 2–6 and Tables 2–3.
 
-Model weights and third-party evaluation records are excluded. Representative
+Model weights and third-party evaluation instances are excluded. Representative
 MoralTrace examples are included under `data/samples/`. The complete dataset is
 available from the [MoralTrace Hugging Face Dataset](https://huggingface.co/datasets/happy-holiday/MoralTrace)
 and tracks the current dataset release.
@@ -54,7 +54,7 @@ python scripts/download_data.py \
 ```
 
 The downloader checks every configuration against
-`data/manifests/moraltrace.json`. The expected total is 51,177 records across
+`data/manifests/moraltrace.json`. The expected total is 51,177 instances across
 nine configurations. Dataset structure, licensing, and split rules are listed
 in `docs/DATA.md`.
 
@@ -79,11 +79,11 @@ The other principal entry points are:
 - `experiments/behavioral_screen.py`: behavioral readouts and screening data;
 - `experiments/relational_binding.py`: source, valence, and joint counterfactual replacement at their declared clause endpoints;
 - `experiments/mediator_knockout.py`: remove downstream attention to the intermediate-event span and compare equal-length random spans;
-- `experiments/compact_interface.py`: fit a low-rank interface on train graphs and evaluate it on disjoint validation graphs;
+- `experiments/compact_interface.py`: fit a low-rank subspace on train graphs and evaluate it on disjoint validation graphs;
 - `experiments/component_mediation.py`: restore selected attention and MLP outputs;
-- `experiments/external_validation.py`: apply a frozen interface to paired external prompts.
+- `experiments/external_validation.py`: apply a frozen subspace to paired external prompts.
 
-Every experiment writes model metadata, intervention settings, and record-level
+Every experiment writes model metadata, intervention settings, and instance-level
 measurements. Model names, local directory names, precisions, and chat-template
 settings are declared in `configs/models.yaml`. Frozen seeds, readouts, layers,
 positions, ranks, and component counts are declared in
@@ -104,7 +104,7 @@ no model weights.
 
 ## Results and paper mapping
 
-The compact numerical release lives in `results/paper_metrics/`:
+The numerical release lives in `results/paper_metrics/`:
 
 - Figure 2: `figure2_patient_completion.csv`;
 - Figure 3 and Table 3: `table3_relational_binding.csv`;
@@ -115,12 +115,12 @@ The compact numerical release lives in `results/paper_metrics/`:
 - external validation and normative criterion controls: `external_validation.csv` and `criterion_conditioning.csv`.
 
 The CSV files retain the precision reported by the manuscript. Full
-record-level traces are distributed with the dataset release so confidence
+instance-level traces are distributed with the dataset release so confidence
 intervals and alternative aggregations can be recomputed.
 
 ## Licenses
 
-Source code is released under Apache-2.0. Original MoralTrace records and
+Source code is released under Apache-2.0. Original MoralTrace instances and
 metadata are released under CC BY 4.0. Third-party datasets and model weights
 remain governed by their original terms. See `LICENSE`, `DATA_LICENSE`, and
 `NOTICE`.

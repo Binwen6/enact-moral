@@ -62,7 +62,7 @@ def score_rows(
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Collect behavioral readouts for MoralTrace records.")
+    parser = argparse.ArgumentParser(description="Collect behavioral readouts for MoralTrace instances.")
     parser.add_argument("--data", type=Path, required=True)
     parser.add_argument("--model-id", required=True)
     parser.add_argument("--model-source", choices=("local", "hub"), required=True)
@@ -87,7 +87,7 @@ def main() -> int:
     if arguments.max_records:
         records = records[: arguments.max_records]
     if not records:
-        raise ValueError("No selected records")
+        raise ValueError("No selected instances")
 
     model, tokenizer, metadata = load_model(
         specs[arguments.model_id], arguments.model_source, arguments.model_root,
