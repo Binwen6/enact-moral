@@ -6,6 +6,16 @@ from pathlib import Path
 from typing import Any, Iterable
 
 
+def decode_instance(row: dict[str, Any]) -> dict[str, Any]:
+    # Released rows keep the original instance as a JSON string
+    if "record_json" not in row:
+        return row
+    instance = json.loads(row["record_json"])
+    if not isinstance(instance, dict):
+        raise TypeError("record_json does not hold a JSON object")
+    return instance
+
+
 def read_jsonl(path: Path) -> list[dict[str, Any]]:
     if not path.is_file():
         raise FileNotFoundError(path)
@@ -17,7 +27,7 @@ def read_jsonl(path: Path) -> list[dict[str, Any]]:
             value = json.loads(line)
             if not isinstance(value, dict):
                 raise TypeError(f"{path}:{line_number} is not a JSON object")
-            rows.append(value)
+            rows.append(decode_instance(value))
     if not rows:
         raise ValueError(f"No instances in {path}")
     return rows

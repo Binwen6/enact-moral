@@ -27,7 +27,8 @@ the same split. Subspace fitting uses train graphs, layer and rank selection
 uses validation graphs, and the sealed test split is read once for the frozen
 analysis. Downloaded configurations preserve their named splits. Each
 configuration contains the Arrow representation and a `jsonl/` directory.
-Experiment entry points consume one named JSONL split directly.
+Experiment entry points consume one named JSONL split directly and decode the
+instance stored in `record_json`.
 
 ## Representative samples
 

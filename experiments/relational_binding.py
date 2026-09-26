@@ -93,7 +93,8 @@ def select_complete_graphs(records: list[dict[str, Any]], split: str, setting: s
         raise ValueError("maximum must be positive")
     grouped: dict[str, list[dict[str, Any]]] = defaultdict(list)
     for record in records:
-        if record.get("split") == split and record.get("semantic_setting") == setting:
+        # Construction controls carry no factorial cell
+        if record.get("record_type") == "core_factorial" and record.get("split") == split and record.get("semantic_setting") == setting:
             grouped[record["graph_template_id"]].append(record)
     selected: list[dict[str, Any]] = []
     for graph_id in sorted(grouped)[:maximum]:

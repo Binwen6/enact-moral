@@ -32,6 +32,26 @@ relational_binding:
 compact_interface:
   rank: 1
   position: final_prompt_token
+  readout: inferred_intention
+  train_steps: 300
+  learning_rate: 0.01
+  seed: 20260819
+  source_layers:
+    qwen2_5_7b_instruct: {relation: 14, valence: 11}
+    qwen2_5_72b_instruct: {relation: 32, valence: 24}
+    gemma_2_9b_it: {relation: 17, valence: 13}
+    gemma_2_27b_it: {relation: 18, valence: 14}
+    llama_3_1_8b_instruct: {relation: 13, valence: 22}
+    llama_3_1_70b_instruct: {relation: 24, valence: 32}
+    olmo_3_7b_instruct: {relation: 16, valence: 10}
+  batch_size:
+    qwen2_5_7b_instruct: 64
+    qwen2_5_72b_instruct: 8
+    gemma_2_9b_it: 32
+    gemma_2_27b_it: 12
+    llama_3_1_8b_instruct: 32
+    llama_3_1_70b_instruct: 4
+    olmo_3_7b_instruct: 64
   layers:
     qwen2_5_7b_instruct: 28
     qwen2_5_72b_instruct: 61

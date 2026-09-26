@@ -70,6 +70,40 @@ class HiddenStatePatch(AbstractContextManager["HiddenStatePatch"]):
             handle.remove()
 
 
+class LastTokenWrite(AbstractContextManager["LastTokenWrite"]):
+    def __init__(self, model: Any, layer: int) -> None:
+        blocks = transformer_layers(model)
+        if layer < 1 or layer > len(blocks):
+            raise ValueError(f"Layer must lie in [1, {len(blocks)}]")
+        self.mode = "off"
+        self.captured: torch.Tensor | None = None
+        self.source: torch.Tensor | None = None
+        self.basis: torch.Tensor | None = None
+        self.handle = blocks[layer - 1].register_forward_hook(self._hook)
+
+    def _hook(self, _module: Any, _inputs: Any, output: Any) -> Any:
+        hidden = output[0] if isinstance(output, tuple) else output
+        # Left padding puts the final prompt token at index -1
+        if self.mode == "capture":
+            self.captured = hidden[:, -1].detach().float()
+            return output
+        if self.mode != "write":
+            return output
+        if self.source is None:
+            raise RuntimeError("Write mode requires source states")
+        current = hidden[:, -1]
+        delta = self.source.to(device=current.device, dtype=current.dtype) - current
+        if self.basis is not None:
+            basis = self.basis.to(device=current.device, dtype=current.dtype)
+            delta = (delta @ basis) @ basis.T
+        patched = hidden.clone()
+        patched[:, -1] = current + delta
+        return (patched, *output[1:]) if isinstance(output, tuple) else patched
+
+    def __exit__(self, exc_type: Any, exc_value: Any, traceback: Any) -> None:
+        self.handle.remove()
+
+
 def capture_states(
     model: Any,
     tokenizer: Any,

@@ -11,10 +11,21 @@ from data_validation import (
     validate_release_metadata,
     validate_samples,
 )
-from io_utils import read_jsonl
+from io_utils import decode_instance, read_jsonl
 
 
 class DataReleaseTests(unittest.TestCase):
+    def test_released_row_is_decoded(self) -> None:
+        instance = {"record_id": "graph/normative_social/cell", "record_type": "core_factorial"}
+        row = {
+            "record_id": instance["record_id"],
+            "record_type": "core_factorial",
+            "split": "train",
+            "record_json": json.dumps(instance),
+        }
+        self.assertEqual(decode_instance(row), instance)
+        self.assertEqual(decode_instance(instance), instance)
+
     def test_manifest_and_sample_coverage(self) -> None:
         manifest = load_manifest(PROJECT_ROOT / "data/manifests/moraltrace.json")
         validate_manifest(manifest)

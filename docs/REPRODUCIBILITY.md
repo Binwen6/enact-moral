@@ -29,8 +29,14 @@ declared in `configs/models.yaml`.
 
 Every main intervention uses a one-indexed layer number. The relational-binding
 entry point reads causal-source states at the causal-statement endpoint and
-outcome-valence states at the outcome endpoint. The low-rank subspace uses the
-final prompt token, trains on train graphs, and evaluates on validation graphs.
+outcome-valence states at the outcome endpoint. The low-rank subspace acts on
+the final-token residual of one downstream block, trains on train graphs, and
+evaluates on validation graphs. Its basis is trained with Adam so that writing
+the joint-run residual inside the basis reproduces the Yes-minus-No margin of
+the inferred-intention readout under joint source replacement; a QR
+factorization keeps the columns orthonormal. `--shuffled-control` trains a
+second basis that pairs each source residual with a wrong example in the same
+batch and keeps the rank, optimizer, and step count.
 The frozen values used by the manuscript are listed in
 `configs/paper_experiments.yaml`.
 
@@ -40,7 +46,7 @@ The frozen values used by the manuscript are listed in
 2. `patient_completion.py` tests sufficiency and necessity of the inferred patient state.
 3. `relational_binding.py` compares source-only, valence-only, additive, and joint replacement.
 4. `mediator_knockout.py` removes downstream attention to an intermediate event and equal-length random spans.
-5. `compact_interface.py` fits the frozen low-rank state and can export its basis as NumPy data.
+5. `compact_interface.py` trains the low-rank basis, reports its recovery of the joint effect against the full-state write and the shuffled-supervision basis, and can export the basis as NumPy data.
 6. `component_mediation.py` tests selected attention heads and MLP blocks.
 7. `external_validation.py` applies the frozen basis to paired prompts from licensed external datasets.
 

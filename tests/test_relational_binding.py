@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import unittest
 
-from experiments.relational_binding import cell_key, donor_indices
+from experiments.relational_binding import cell_key, donor_indices, select_complete_graphs
 
 
 class RelationalBindingTests(unittest.TestCase):
@@ -39,6 +39,17 @@ class RelationalBindingTests(unittest.TestCase):
             self.assertEqual(target[:3], joint[:3])
             self.assertNotEqual(target[3], joint[3])
             self.assertNotEqual(target[4], joint[4])
+
+    def test_selection_skips_construction_controls(self) -> None:
+        factorial = [{**record, "record_type": "core_factorial", "split": "train"} for record in self.records]
+        control = {
+            "record_id": "construct_control/normative_social/0",
+            "record_type": "construct_control",
+            "split": "train",
+            "semantic_setting": "normative_social",
+        }
+        selected = select_complete_graphs([control, *factorial], "train", "normative_social", 1)
+        self.assertEqual([record["record_id"] for record in selected], [record["record_id"] for record in factorial])
 
 
 if __name__ == "__main__":

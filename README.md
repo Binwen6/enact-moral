@@ -134,7 +134,7 @@ The other principal entry points are:
 - `experiments/behavioral_screen.py`: behavioral readouts and screening data;
 - `experiments/relational_binding.py`: source, valence, and joint counterfactual replacement at their declared clause endpoints;
 - `experiments/mediator_knockout.py`: remove downstream attention to the intermediate-event span and compare equal-length random spans;
-- `experiments/compact_interface.py`: fit a low-rank subspace on train graphs and evaluate it on disjoint validation graphs;
+- `experiments/compact_interface.py`: train a low-rank basis on train graphs to reproduce the joint-replacement margin and evaluate it on disjoint validation graphs, with an optional shuffled-supervision basis;
 - `experiments/component_mediation.py`: restore selected attention and MLP outputs;
 - `experiments/external_validation.py`: apply a frozen subspace to paired external prompts.
 
